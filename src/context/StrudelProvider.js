@@ -27,6 +27,7 @@ export default function StrudelProvider({ children, editorContainerId = "strudel
     const hostRef = useRef(null);
     const mountedRef = useRef(false);
     const [started, setStarted] = useState(false);
+    const playingRef = useRef(false);
 
     useEffect(() => {
         mountedRef.current = true;
@@ -71,24 +72,36 @@ export default function StrudelProvider({ children, editorContainerId = "strudel
             hostRef.current = null;
             setStarted(false);
         };
-    }, [editorContainerId]); 
+    }, [editorContainerId]);
 
     useEffect(() => {
         const m = mirrorRef.current;
-        if (m) m.setCode(processed);
-    }, [processed]);
+        if (m) {
+            m.setCode(processed);
+            if (started && playingRef.current) {
+                m.evaluate();
+            }
+        }
+    }, [processed, started]);
 
     const api = useMemo(() => {
         const play = () => {
-            if (!started) return;         
+            if (!started) return;
+            playingRef.current = true;
             mirrorRef.current?.evaluate();
         };
-        const stop = () => mirrorRef.current?.stop();
-        const proc = () => mirrorRef.current?.setCode(processed);
+        const stop = () => {
+            playingRef.current = false;
+            mirrorRef.current?.stop();
+        };
+        const proc = () => {
+            mirrorRef.current?.setCode(processed);
+        };
         const procAndPlay = () => {
             if (!started) return;
             const m = mirrorRef.current;
             if (!m) return;
+            playingRef.current = true;
             m.setCode(processed);
             m.evaluate();
         };
