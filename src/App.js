@@ -19,33 +19,42 @@ export default function App() {
 
                 <div className="row g-3">
                     <div className="col-lg-7">
-                        <div className="card jsr-card h-100">
-                            <div className="card-header"><strong>Your Epic Beat Goes In This Box:</strong></div>
-                            <div className="card-body">
-                                <EditorPane />
+                        <div className="d-flex flex-column gap-3">
+                            <div className="card jsr-card">
+                                <div className="card-header"><strong>Your Epic Beat Goes In This Box:</strong></div>
+                                <div className="card-body">
+                                    <EditorPane />
+                                </div>
+                            </div>
+
+                            <div className="card jsr-card">
+                                <div className="card-header"><strong>Watch the Beat Change AND Yourself Going Incredibly Hard on the Live Stage!</strong></div>
+                                <div className="card-body">
+                                    <StrudelHost id="strudel-editor" label="" className="mb-0" />
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div className="col-lg-5">
-                        <div className="card jsr-card h-100">
-                            <div className="card-header"><strong>Modify &/Or Play it w/ DJ Controls:</strong></div>
-                            <div className="card-body">
-                                <div className="mb-3">
-                                    <Transport />
+                        <div className="d-flex flex-column gap-3">
+                            <div className="card jsr-card">
+                                <div className="card-header"><strong>Modify &/Or Play it w/ DJ Controls:</strong></div>
+                                <div className="card-body">
+                                    <div className="mb-3">
+                                        <Transport />
+                                    </div>
+                                    <ControlsPanel />
                                 </div>
-                                <ControlsPanel />
-                                <hr className="my-4" />
-                                <GainGraph />
+                            </div>
+
+                            <div className="card jsr-card">
+                                <div className="card-header"><strong>Gain Meter</strong></div>
+                                <div className="card-body">
+                                    <GainGraph />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div className="card jsr-card mt-3">
-                    <div className="card-header"><strong>Watch the Beat Change AND Yourself Going Incredibly Hard on the Live Stage:</strong></div>
-                    <div className="card-body">
-                        <StrudelHost id="strudel-editor" label="" className="mb-0" />
                     </div>
                 </div>
             </div>

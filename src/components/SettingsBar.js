@@ -37,10 +37,10 @@ export default function SettingsBar() {
                     <span className="text-muted small">If you're the forgetful type, you can also SAVE and LOAD your settings. How good?</span>
                 </div>
                 <div className="d-flex gap-2">
-                    <button type="button" className="btn btn-outline-secondary-jsr" onClick={onSave}>
+                    <button type="button" className="btn jsr" onClick={onSave}>
                         Save DJ Settings
                     </button>
-                    <button type="button" className="btn btn-outline-secondary-jsr" onClick={onOpenClick}>
+                    <button type="button" className="btn jsr" onClick={onOpenClick}>
                         Load DJ Settings
                     </button>
                     <input

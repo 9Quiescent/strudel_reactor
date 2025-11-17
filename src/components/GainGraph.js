@@ -5,7 +5,7 @@ import { useStrudel } from "../context/StrudelProvider";
 export default function GainGraph({
     width = 520,
     height = 180,
-    maxPoints = 160,   // around 20s at 8 samples/sec
+    maxPoints = 90,   // around 20s at 8 samples/sec
     sampleMs = 125,   
 }) {
     const { controls } = useStrudel();
@@ -111,8 +111,7 @@ export default function GainGraph({
     return (
         <div>
             <div className="d-flex justify-content-between align-items-center mb-2">
-                <strong>Gain meter</strong>
-                <span className="text-muted small">updates {Math.round(1000 / sampleMs)}×/sec</span>
+                <span className="text-muted small">Try Moving the Gain Slider!</span>
             </div>
             <svg ref={svgRef} className="w-100 rounded border" />
         </div>
