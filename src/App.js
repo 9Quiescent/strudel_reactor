@@ -5,6 +5,7 @@ import EditorPane from "./components/EditorPane";
 import StrudelProvider from "./context/StrudelProvider";
 import StrudelHost from "./components/StrudelHost";
 import SettingsBar from "./components/SettingsBar";
+import GainGraph from "./components/GainGraph";
 
 export default function App() {
     return (
@@ -34,6 +35,8 @@ export default function App() {
                                     <Transport />
                                 </div>
                                 <ControlsPanel />
+                                <hr className="my-4" />
+                                <GainGraph />
                             </div>
                         </div>
                     </div>
