@@ -90,7 +90,7 @@ export default function GainGraph({
                 .attr("y", y(0))
                 .attr("height", 0)
                 .attr("rx", 2).attr("ry", 2)
-                .attr("fill", "#26c281")            // this is green
+                .attr("fill", "#26c281")            // this produces the green for the bars
                 .transition().duration(sampleMs * 0.9)
                 .attr("y", d => y(d.v))
                 .attr("height", d => h - y(d.v)),

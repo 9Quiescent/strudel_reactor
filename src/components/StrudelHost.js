@@ -3,7 +3,7 @@ export default function StrudelHost({
     label = "Live Stage",
     className = "",
     style,
-    minHeight = 360, // taller so CodeMirror isn't cramped
+    minHeight = 360, // probably keep this taller so CodeMirror isn't cramped
 }) {
     return (
         <div className={className}>
