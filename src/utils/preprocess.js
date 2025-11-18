@@ -1,7 +1,7 @@
 export function preprocessSong(raw, controls = {}) {
     if (!raw) return "";
 
-    const cps = controls.cps ?? controls.tempo ?? "120/60/4";
+    const cps = controls.cps ?? controls.tempo ?? "120/60/4"; //bpm/spm/bpc
     const room = controls.room ?? 0.2;
     const gain = controls.gain ?? 1.2;
     const muteDrums = controls.muteDrums ?? controls.drumsMuted ?? false;

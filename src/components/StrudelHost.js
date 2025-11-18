@@ -1,8 +1,9 @@
 export default function StrudelHost({
     id = "strudel-editor",
-    label = "",
+    label = "Live Stage",
     className = "",
     style,
+    minHeight = 360, // probably keep this taller so CodeMirror isn't cramped
 }) {
     return (
         <div className={className}>
@@ -10,7 +11,7 @@ export default function StrudelHost({
             <div
                 id={id}
                 style={{
-                    minHeight: 220,          
+                    minHeight,
                     border: "1px solid #ddd",
                     borderRadius: 6,
                     ...style,
